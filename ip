@@ -1,0 +1,14 @@
+"use strict";
+
+function ipToNumberForLoop(ip = '127.0.0.1') {
+  const bytes = ip.split('.').map(Number);
+  let result = 0;
+  for (let i = 0; i < bytes.length; i++) {
+    result += bytes[i] << (8 * (3 - i));
+  }
+  return result;
+}
+console.log(ipToNumberForLoop('10.0.0.1'));   
+console.log(ipToNumberForLoop('127.0.0.1'));  
+console.log(ipToNumberForLoop('192.168.1.1'));
+module.exports = { countTypesInArray };
